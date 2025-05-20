@@ -4,7 +4,7 @@ export const Header = () => {
   return (
     <div>
       {/* logo */}
-      <div className="w-[375px] h-[59px] md:w-full flex p-[20px] items-center justify-between ">
+      <div className="h-[59px] md:w-full flex p-[20px] items-center md:justify-between justify-between ">
         <div className="flex ">
           <Film color="#4338CA" />
           <p className="text-[16px, #4338CA] text-[#4338CA] font-bold">
@@ -12,7 +12,7 @@ export const Header = () => {
           </p>
         </div>
 
-        <div className="hidden md:inline flex gap-[70px]">
+        <div className="hidden md:flex md:gap-[70px]">
           {/* genre button */}
           <div className="flex items-center">
             <ChevronDown className="w-[16px] h-[16px] relative m-[16px]" />

@@ -2,7 +2,7 @@ import { Film } from "lucide-react";
 export const Footer = () => {
   return (
     <div>
-      <div className="w-[375px] h-[300px] bg-[#4338CA] md:w-full">
+      <div className=" h-[300px] bg-[#4338CA] ">
         <div className="flex-col gap-y-[12px] pl-[20px] pt-[40px]">
           <div className="flex ">
             <Film color="white" className="w-[20px] h-[20px]" />

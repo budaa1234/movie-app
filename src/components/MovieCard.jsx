@@ -3,7 +3,7 @@ export const MovieCard = () => {
   return (
     <div>
       <img className="w-[158px] h-[234px] md:w-[230px] md:h-[340px] rounded-t-lg max-w-[1280px]" src="card.jpg"/>
-      <div className="w-[158px] h-[76px] md:w-[230px] md:h-[95px] bg-[#F4F4F5] rounded-b-lg">
+      <div className="w-[158px] h-auto md:w-[230px] md:h-auto bg-[#F4F4F5] rounded-b-lg">
         <div className="flex gap-[4px] p-[8px]">
           <Star color="yellow" />
           <p className="text-[12px] md:text-[14px] ">6.9/10</p>

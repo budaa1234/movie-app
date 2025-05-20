@@ -1,15 +1,14 @@
 import { Star, Play } from "lucide-react";
 export const MovieCarouselItem = () => {
   return (
-    <div>
+    <div className="relative">
       <img
-        className="md:relative md:flex w-[375px] h-[246px] md:w-full md:h-[600px]"
+        className="w-screen min-h-[246px]  md:max-h-[600px]"
         src="item.jpg"
       />
-      <div className="md:absolut md:flex w-[375px] p-[20px] flex-col gap-y-[16px]">
-
-        <div className="flex gap-[20px]">
-          <div className=" flex-col w-[375px] justify-between">
+      <div className="flex  flex-col md:absolute gap-[16px] m-[20px] top-[178px] left-[120px] md:text-[white] md:w-[404px]">
+        <div className="flex w-[335px] h-[52px] justify-between items-center">
+          <div>
             <p className="text-[14px]">Now Playing:</p>
             <p className="text-[24px] font-normal">Wiced</p>
           </div>
@@ -32,7 +31,6 @@ export const MovieCarouselItem = () => {
           <Play className="w-[16px] h-[16px] " />
           Watch Trailer
         </button>
-
       </div>
     </div>
   );

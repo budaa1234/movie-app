@@ -15,7 +15,7 @@ export const MovieCarousel = () => {
         Autoplay({
           delay: 2000,
         }),
-      ]}>
+      ]} className="pb-13">
         <CarouselContent>
           {Array.from({ length: 5 }).map((_, index) => (
             <CarouselItem key={index}>

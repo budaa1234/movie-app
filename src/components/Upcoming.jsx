@@ -4,7 +4,7 @@ export const Upcoming = () => {
   return (
     <div className="flex flex-col gap-8">
       <div className="flex justify-between">
-        <h1>Upcoming</h1>
+        <h1 className="text-[24px]">Upcoming</h1>
         <ArrowBigRight />
       </div>
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8">

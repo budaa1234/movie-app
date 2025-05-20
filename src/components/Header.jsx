@@ -12,7 +12,7 @@ export const Header = () => {
           </p>
         </div>
 
-        <div className="flex gap-[70px]">
+        <div className="hidden md:inline flex gap-[70px]">
           {/* genre button */}
           <div className="flex items-center">
             <ChevronDown className="w-[16px] h-[16px] relative m-[16px]" />

@@ -19,13 +19,11 @@ export const MovieCarousel = ({ nowPlayingMovie }) => {
       className="pb-13"
     >
       <CarouselContent>
-        {nowPlayingMovie?.slice(0, 3).map((movie, index) => (
+        {nowPlayingMovie?.slice(0, 5).map((movie, index) => (
           <CarouselItem key={index}>
             <div className="p-1">
               <MovieCarouselItem
-                title={movie.title}
-                overview={movie.overview}
-                vote_average={movie.vote_average}
+                movie={movie}
               />
             </div>
           </CarouselItem>

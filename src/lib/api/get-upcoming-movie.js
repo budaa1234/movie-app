@@ -1,15 +1,15 @@
 export const getUpcomingMovies = async () => {
-    const response = await fetch(
+  const response = await fetch(
     `${process.env.NEXT_PUBLIC_TMDB_BASE_URL}movie/upcoming?language=en-US&page=1`,
     {
-        method: "GET",
-        headers: {
+      method: "GET",
+      headers: {
         accept: "application/json",
         Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMDB_API_TOKEN}`,
-        }
-    } 
-    )
-    const movies = await response.json()
+      },
+    }
+  );
+  const movies = await response.json();
 
-    return movies?.results
-}
+  return movies?.results;
+};

@@ -45,7 +45,7 @@ export const Header = () => {
           </button>
         </div>
       </div>
-      <div className="w-[335px] h-[513px] md:w-[577px] md:h-[333px] rounded-lg border p-5">
+      <div className="hidden w-[335px] h-[513px] md:w-[577px] md:h-[333px] rounded-lg border p-5">
         <p className="text-[24px] font-black">Genres</p>
         <p className="text-[16px]">See lists of movies by genre</p>
         <div className="pt-[33px] flex flex-wrap gap-4">

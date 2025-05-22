@@ -2,15 +2,19 @@ import { useEffect, useState } from "react";
 import { MovieCard } from "./MovieCard";
 import { Button } from "./ui/button";
 import { MoveRight } from "lucide-react";
-import { getUpcomingMovies } from "@/pages/api/get-upcoming-movie";
+import { getUpcomingMovies } from "@/lib/api/get-upcoming-movie";
+
+
 export const Upcoming = () => {
   const [upcomingMovies, setUpcomingMovies] = useState([])
   useEffect(() => {
     const fetchMovies = async () => {
       const upcomingMovies = await getUpcomingMovies();
       setUpcomingMovies (upcomingMovies);
+      console.log(upcomingMovies)
     }
-  })
+    fetchMovies()
+  }, [])
   return (
     <div className="flex flex-col gap-8">
       <div className="flex justify-between">

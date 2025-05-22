@@ -31,16 +31,16 @@ export default function Home() {
     getNowPlayingMovies()
   }, [])
   return (
-    <div className="container mx-auto">
+    <div className="w-full lg:max-w-[1278px] mx-auto">
       {/* <Header /> */}
       <MovieCarousel nowPlayingMovie={nowPlayingMovie}/>
-      <div className="flex justify-center">
-        <div className="flex flex-col gap-13">
+      {/* <div className="flex justify-center">
+        <div className="flex flex-col gap-13"> */}
           <Upcoming />
           <Popular />
           <TopRated />
-        </div>
-      </div>
+        {/* </div>
+      </div> */}
       <Footer />
     </div>
   );

@@ -23,7 +23,7 @@ export default function Home() {
       console.log(movies)
 
       setNowPlayingMovie(movies.results)
-    }catch (error) {
+    } catch (error) {
       console.log(error)
     };
   }
@@ -31,16 +31,14 @@ export default function Home() {
     getNowPlayingMovies()
   }, [])
   return (
-    <div className="w-full lg:max-w-[1278px] mx-auto">
-      {/* <Header /> */}
-      <MovieCarousel nowPlayingMovie={nowPlayingMovie}/>
-      {/* <div className="flex justify-center">
-        <div className="flex flex-col gap-13"> */}
-          <Upcoming />
-          <Popular />
-          <TopRated />
-        {/* </div>
-      </div> */}
+    <div className="container mx-auto">
+      <Header />
+      <MovieCarousel nowPlayingMovie={nowPlayingMovie} />
+      <div className="flex flex-col gap-13 mx-auto max-w-[1280px]">
+        <Upcoming />
+        <Popular />
+        <TopRated />
+      </div>
       <Footer />
     </div>
   );

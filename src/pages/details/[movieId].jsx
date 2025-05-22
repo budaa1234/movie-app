@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Cover } from "@/components/details/Cover";
+import { StaffImformation } from "@/components/details/StaffImformation";
+import { MoreLikeThis } from "@/components/details/MoreLikeThis";
 export default function Page() {
   const router = useRouter();
   const movieId = router.query.movieId;
@@ -17,9 +19,13 @@ export default function Page() {
     getMovie();
   }, []);
   return (
-    <div className="w-full lg:max-w-[1278px] mx-auto">
+    <div className="container mx-auto flex flex-col gap-y-[20px]">
       <Header />
+      <div className="mx-auto max-w-[1280px]">
       <Cover movie={movie} />
+      <StaffImformation/>
+      <MoreLikeThis/>
+      </div>
       <Footer />
     </div>
   );

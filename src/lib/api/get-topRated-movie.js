@@ -1,6 +1,6 @@
-export const getUpcomingMovies = async () => {
+export const getTopRatedMovies = async () => {
     const response = await fetch(
-    `${process.env.NEXT_PUBLIC_TMDB_BASE_URL}movie/upcoming?language=en-US&page=1`,
+    `${process.env.NEXT_PUBLIC_TMDB_BASE_URL}movie/top_rated?language=en-US&page=1`,
     {
         method: "GET",
         headers: {

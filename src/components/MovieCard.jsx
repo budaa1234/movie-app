@@ -1,6 +1,8 @@
-import { Star } from "lucide-react";
+import {Star } from "lucide-react"
+import Link from "next/link"
 export const MovieCard = ({ movie }) => {
   return (
+    <Link href={`/details/${movie.id}`}>
     <div className="w-full bg-[#F4F4F5] rounded-lg ">
       <img
         className=" rounded-t-lg "
@@ -17,5 +19,6 @@ export const MovieCard = ({ movie }) => {
         <p className="text-[14px] md:text-[18px] p-[8px]">{movie?.title}</p>
       </div>
     </div>
+    </Link>
   );
 };

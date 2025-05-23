@@ -24,6 +24,7 @@ export const MovieCarousel = ({ nowPlayingMovie }) => {
             <div className="p-1">
               <MovieCarouselItem
                 movie={movie}
+                movieId={movie.id}
               />
             </div>
           </CarouselItem>

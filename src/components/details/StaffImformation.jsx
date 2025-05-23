@@ -1,4 +1,16 @@
-export const StaffImformation = () => {
+import { StaffImpormation } from "@/utils" 
+import { useState, useEffect } from "react";
+export const StaffImformation = ({id}) => {
+    //  const [movie, setMovie] = useState({});
+    //  console.log(id)
+    // useEffect(() => {
+    //     if (!id) return;
+    //     const getMovie = async () => {
+    //       const data = await StaffImpormation(id);
+    //       setMovie(data);
+    //     };
+    //     getMovie();
+    //   }, [id]);
     return (
         <div className="flex-col  flex gap-y-[33px]">
             <div className="flex px-[20px] gap-13">

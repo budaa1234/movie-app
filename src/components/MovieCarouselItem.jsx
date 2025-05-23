@@ -1,11 +1,11 @@
 import { Star, Play } from "lucide-react";
 import Link from "next/link";
-export const MovieCarouselItem = ({ movie, id}) => {
+export const MovieCarouselItem = ({ movie }) => {
   const imgUrl = `${process.env.NEXT_PUBLIC_TMDB_IMAGE_SERVICE_URL}${movie.backdrop_path}`;
   console.log(imgUrl);
   return (
     <div className="relative">
-      <Link href={`/details/${id}`}>
+      <Link href={`/details/${movie.id}`}>
         <img
           className="w-screen min-h-[246px]  md:max-h-[600px]"
           src={imgUrl}

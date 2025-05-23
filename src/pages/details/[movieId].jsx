@@ -11,20 +11,21 @@ export default function Page() {
   const movieId = router.query.movieId;
   const [movie, setMovie] = useState({});
 
-  const getMovie = async () => {
-    const data = await getMovieById(movieId);
-    setMovie(data);
-  };
   useEffect(() => {
+    if (!movieId) return;
+    const getMovie = async () => {
+      const data = await getMovieById(movieId);
+      setMovie(data);
+    };
     getMovie();
-  }, []);
+  }, [movieId]);
   return (
     <div className="container mx-auto flex flex-col gap-y-[20px]">
       <Header />
       <div className="mx-auto max-w-[1280px]">
-      <Cover movie={movie} />
-      <StaffImformation/>
-      <MoreLikeThis/>
+        <Cover movie={movie}/>
+        <StaffImformation id={movie.id}/>
+        {/* <MoreLikeThis/> */}
       </div>
       <Footer />
     </div>

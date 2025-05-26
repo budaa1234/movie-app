@@ -1,7 +1,7 @@
-export const getSimilarMovies = async (id) => {
-    console.log(id)
+export const getSimilarMovies = async (movieId) => {
+    console.log(movieId)
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_TMDB_BASE_URL}movie/${id}/similar?language=en-US&page=1`,
+    `${process.env.NEXT_PUBLIC_TMDB_BASE_URL}movie/${movieId}/similar?language=en-US&page=1`,
     {
       method: "GET",
       headers: {

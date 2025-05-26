@@ -25,7 +25,7 @@ export default function Page() {
       <div className="mx-auto max-w-[1280px]">
         <Cover movie={movie} />
         <StaffImformation id={movie.id} />
-        <Similar movieId={movie.id} />
+        <Similar  movie={movie} />
       </div>
       <Footer />
     </div>

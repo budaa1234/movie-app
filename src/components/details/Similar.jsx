@@ -3,16 +3,22 @@ import { MoveRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { getSimilarMovies } from "@/lib/api/get-similar-movie"; 
+import { useRouter } from "next/router";
 export const Similar = () => {
+  const router = useRouter();
+    const movieId = router.query.movieId;
+    
   const [similarMovies, setSimilarMovies] = useState([])
   useEffect(() => {
-    const fetchMovies = async () => {
-      const similarMovies = await getSimilarMovies()
-      setSimilarMovies(similarMovies)
-      console.log(similarMovies)
-    }
-    fetchMovies()
-  }, [])
+      if (!movieId) return;
+      const getMovie = async () => {
+        const data = await getSimilarMovies (movieId);
+        setSimilarMovies(data);
+        
+      };
+      getMovie();
+    }, [movieId]);
+  
   return (
     <div className="flex flex-col gap-8">
       <div className="flex justify-between">

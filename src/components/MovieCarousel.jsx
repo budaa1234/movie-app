@@ -1,4 +1,3 @@
-
 import Autoplay from "embla-carousel-autoplay";
 import {
   Carousel,
@@ -22,10 +21,7 @@ export const MovieCarousel = ({ nowPlayingMovie }) => {
         {nowPlayingMovie?.slice(0, 5).map((movie, index) => (
           <CarouselItem key={index}>
             <div className="p-1">
-              <MovieCarouselItem
-                movie={movie}
-                movieId={movie.id}
-              />
+              <MovieCarouselItem movie={movie} movieId={movie.id} />
             </div>
           </CarouselItem>
         ))}

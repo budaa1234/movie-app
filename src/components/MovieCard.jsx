@@ -8,6 +8,7 @@ export const MovieCard = ({ movie }) => {
         className=" rounded-t-lg "
         src={`https://image.tmdb.org/t/p/original/${movie?.poster_path}`}
       />
+      
 
       <div className=" h-auto md:h-auto bg-[#F4F4F5] rounded-b-lg">
         <div className="flex gap-[4px] p-[8px]">

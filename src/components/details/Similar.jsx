@@ -1,15 +1,15 @@
 import { MovieCard } from "@/components/MovieCard";
 import { MoveRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { getPopularMovies } from "@/lib/api/get-popular-movie";
 import { useEffect, useState } from "react";
-export const MoreLikeThis = () => {
-  const [popularMovies, setPopularMovies] = useState([])
+import { getSimilarMovies } from "@/lib/api/get-similar-movie"; 
+export const Similar = () => {
+  const [similarMovies, setSimilarMovies] = useState([])
   useEffect(() => {
     const fetchMovies = async () => {
-      const popularMovies = await getPopularMovies()
-      setPopularMovies(popularMovies)
-      console.log(popularMovies)
+      const similarMovies = await getSimilarMovies()
+      setSimilarMovies(similarMovies)
+      console.log(similarMovies)
     }
     fetchMovies()
   }, [])
@@ -23,8 +23,8 @@ export const MoreLikeThis = () => {
         </Button>
       </div>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
-        {popularMovies?.map((movie) => (
-          <MovieCard key={movie.id} movie={movie}/>
+        {similarMovies?.map((movie) => (
+          <MovieCard key={movie.id} movie={movie}  movieId={movie.id}/>
         ))}
       </div>
     </div>

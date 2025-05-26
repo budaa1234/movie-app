@@ -1,5 +1,6 @@
 import { Star, Play } from "lucide-react";
 import { Button } from "../ui/button";
+import { MovieTrailer } from "../MovieTrailer";
 export const Cover = ({ movie }) => {
   console.log(movie);
   const imgUrl = `${process.env.NEXT_PUBLIC_TMDB_IMAGE_SERVICE_URL}${movie?.backdrop_path}`;
@@ -39,9 +40,12 @@ export const Cover = ({ movie }) => {
             <Button variant="outline" className="rounded-full">
               <Play />
             </Button>
+          
             <p className="text-[#FFFFFF] text-[12px]">Play trailer</p>
             <p className="text-[#FFFFFF] text-[12px]">2:35</p>
+              <MovieTrailer movieId={movie.id}/>
           </div>
+          
         </div>
       </div>
       <div className="flex p-[20px] gap-8">

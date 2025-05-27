@@ -32,14 +32,14 @@ export default function Home() {
   }, [])
   return (
     <div className="container mx-auto">
-      <Header />
+      
       <MovieCarousel nowPlayingMovie={nowPlayingMovie} />
       <div className="flex flex-col gap-13 mx-auto max-w-[1280px]">
         <Upcoming />
         <Popular />
         <TopRated />
       </div>
-      <Footer />
+      
     </div>
   );
 }

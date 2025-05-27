@@ -21,13 +21,13 @@ export default function Page() {
   }, [movieId]);
   return (
     <div className="container mx-auto flex flex-col gap-y-[20px]">
-      <Header />
+    
       <div className="mx-auto max-w-[1280px]">
         <Cover movie={movie} />
         <StaffImformation id={movie.id} />
         <Similar  movie={movie} />
       </div>
-      <Footer />
+    
     </div>
   );
 }

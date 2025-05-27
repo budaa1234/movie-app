@@ -10,7 +10,11 @@ export const Upcoming = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       const upcomingMovies = await getUpcomingMovies();
-      setUpcomingMovies(upcomingMovies);
+
+      const firstTenMovies = upcomingMovies?.results?.slice(0, 10)
+
+      setUpcomingMovies(firstTenMovies);
+
       console.log(upcomingMovies);
     };
     fetchMovies();

@@ -17,8 +17,9 @@ const Upcoming = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       const upcomingMovies = await getUpcomingMovies();
-      setUpcomingMovies(upcomingMovies);
-      console.log(upcomingMovies);
+      const firstTenMovies = upcomingMovies?.results?.slice(0, 10)
+      setUpcomingMovies(firstTenMovies);
+      console.log(firstTenMovies);
     };
     fetchMovies();
   }, []);
@@ -39,7 +40,7 @@ const Upcoming = () => {
               <PaginationPrevious href="#" />
             </PaginationItem>
             <PaginationItem>
-              <PaginationLink href="#">1</PaginationLink>
+              <PaginationLink href="#" >1</PaginationLink>
             </PaginationItem>
             <PaginationItem>
               <PaginationEllipsis />

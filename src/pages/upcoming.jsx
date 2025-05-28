@@ -17,9 +17,8 @@ const Upcoming = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       const upcomingMovies = await getUpcomingMovies();
-      const firstTenMovies = upcomingMovies?.results?.slice(0, 10)
-      setUpcomingMovies(firstTenMovies);
-      console.log(firstTenMovies);
+      setUpcomingMovies(upcomingMovies);
+      console.log(upcomingMovies);
     };
     fetchMovies();
   }, []);
@@ -30,7 +29,7 @@ const Upcoming = () => {
           <h1 className="text-[24px] font-black">Upcoming</h1>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
-          {upcomingMovies?.map((movie) => (
+          {upcomingMovies.map((movie) => (
             <MovieCard key={movie.id} movie={movie} />
           ))}
         </div>
@@ -40,7 +39,7 @@ const Upcoming = () => {
               <PaginationPrevious href="#" />
             </PaginationItem>
             <PaginationItem>
-              <PaginationLink href="#" >1</PaginationLink>
+              <PaginationLink href="#">1</PaginationLink>
             </PaginationItem>
             <PaginationItem>
               <PaginationEllipsis />

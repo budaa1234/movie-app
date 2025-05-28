@@ -1,4 +1,5 @@
 import Genre from "@/components/Genre/Genre";
+import { Button } from "@/components/ui/button";
 import { getGenre } from "@/lib/api/get-genre";
 import { useEffect, useState } from "react";
 
@@ -14,10 +15,16 @@ const Page = () => {
     getMovieGenre();
   }, []);
   return (
-    <div className="flex flex-wrap [335px] h-[513px] md:w-[577px] md:h-[333px] rounded-lg border p-5 gap-4">
-      {movieGenre.genres?.map((genre) => (
-        <Genre genre={genre} key={genre.id} />
-      ))}
+    <div className="flex flex-col gap-y-5 p-5">
+      <p className="text-[30px]">Search filter</p>
+      <p className="text-[24px] font-black">Genres</p>
+      <p className="text-[16px]">See lists of movies by genre</p>
+
+      <div className="flex flex-wrap  gap-4">
+        {movieGenre.genres?.map((genre) => (
+          <Genre genre={genre} key={genre.id} />
+        ))}
+      </div>
     </div>
   );
 };

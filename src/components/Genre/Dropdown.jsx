@@ -22,21 +22,19 @@ const Dropdowm = () => {
     getMovieGenre();
   }, []);
   return (
-    <Link className="flex" href={`/Genre/Genre`}>
+    <Link href={`/Genre/Genre`}>
       <DropdownMenu className="flex">
         <DropdownMenuTrigger asChild>
           <Button variant="outline">genre</Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="flex flex-wrap w-[335px] h-[513px] md:w-[577px]">
-          <div className="flex flex-wrap w-[335px] h-[513px] md:w-[577px] md:h-[333px]">  
+        <DropdownMenuContent className="flex flex-col justify-center md:justify-center gap-4">
+          <p className="text-[24px] font-black">Genres</p>
+          <p className="text-[16px]">See lists of movies by genre</p>
+          <div className="flex flex-wrap w-[335px] h-[513px] md:w-[577px] md:h-[333px] gap-4">
             {movieGenre.genres?.map((genre) => (
-                <Button variant="secondary" className=" border-gray-400 border-[1px] rounded-full px-[10px] py-[2px] bg-white">
-             <Genre genre={genre} key={genre.id} />
-            </Button>
-              ))}
+              <Genre genre={genre} key={genre.id} />
+            ))}
           </div>
-
-
         </DropdownMenuContent>
       </DropdownMenu>
     </Link>

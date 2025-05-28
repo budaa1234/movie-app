@@ -5,9 +5,11 @@ import { useEffect, useState } from "react";
 const Genre = ({ genre }) => {
   console.log(genre);
   return (
-    <Button variant="secondary" className="rounded-full h-[20px]">
+    <Button variant="outline" className="h-[20px]">
+      {/* <div className="flex items-center gap-4"> */}
       {genre?.name}
       <ChevronRight className="w-1 h-2" />
+      {/* </div> */}
     </Button>
     // <div className="flex justify-center">
     //   <div className="w-[335px] h-[513px] md:w-[577px] md:h-[333px] rounded-lg border p-5">

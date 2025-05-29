@@ -9,6 +9,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { getGenre } from "@/lib/api/get-genre";
 import Genre from "./Genre";
+import { ChevronDown} from "lucide-react";
 
 const Dropdowm = () => {
   const [movieGenre, setMovieGenre] = useState([]);
@@ -22,10 +23,10 @@ const Dropdowm = () => {
     getMovieGenre();
   }, []);
   return (
-    <Link href={`/Genre/Genre`}>
-      <DropdownMenu className="flex">
+    <Link href={`/genre/genre`}>
+      <DropdownMenu >
         <DropdownMenuTrigger asChild>
-          <Button variant="outline">genre</Button>
+          <Button variant="outline" className="h-[36px] rounded-lg shadow-sm"><ChevronDown/>Genre</Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="flex flex-col justify-center md:justify-center gap-4">
           <p className="text-[24px] font-black">Genres</p>

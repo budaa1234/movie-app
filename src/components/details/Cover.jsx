@@ -37,13 +37,13 @@ export const Cover = ({ movie }) => {
             className="w-screen md:w-[760px]  h-[211px]  md:h-[428px]"
           />
           <div className="absolute flex items-center content-end p-[12px] gap-3">
-            <Button variant="outline" className="rounded-full">
+            {/* <Button variant="outline" className="rounded-full">
               <Play />
             </Button>
           
             <p className="text-[#FFFFFF] text-[12px]">Play trailer</p>
-            <p className="text-[#FFFFFF] text-[12px]">2:35</p>
-              <MovieTrailer movieId={movie.id}/>
+            <p className="text-[#FFFFFF] text-[12px]">2:35</p> */}
+              <MovieTrailer movieId={movie.id} />
           </div>
           
         </div>

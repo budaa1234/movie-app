@@ -17,7 +17,7 @@ export const MovieCard = ({ movie }) => {
             {movie?.vote_average.toFixed(1)}
           </p>
         </div>
-        <p className="text-[14px] md:text-[18px] p-[8px]">{movie?.title}</p>
+        <p className="text-[14px] md:text-[18px] p-[8px] dark:text-black">{movie?.title}</p>
       </div>
     </div>
     </Link>

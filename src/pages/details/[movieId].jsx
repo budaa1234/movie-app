@@ -20,7 +20,7 @@ export default function Page() {
   return (
     <div className="container mx-auto flex flex-col gap-y-[20px]">
     
-      <div className="mx-auto max-w-[1280px]">
+      <div className="mx-auto max-w-[1280px] flex flex-col gap-y-5">
         <Cover movie={movie} />
         <StaffImformation id={movie.id} />
         <Similar  movie={movie} />

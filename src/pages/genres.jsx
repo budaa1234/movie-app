@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 const Page = () => {
   const [genreMovies, setGenreMovie] = useState({});
   const router = useRouter();
+
   const genreIds = router.query.genreIds;
   console.log(genreIds)
 

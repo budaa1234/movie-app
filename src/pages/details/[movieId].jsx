@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { getMovieById } from "@/utils";
+import { getMovieById } from "@/utils/getMovieById";
 import { useEffect, useState } from "react";
 import { Cover } from "@/components/details/Cover";
 import { StaffImformation } from "@/components/details/StaffImformation";

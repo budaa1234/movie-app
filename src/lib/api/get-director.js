@@ -1,5 +1,4 @@
-export const StaffImpormation = async (id) => {
-    
+export const getDirector = async (id) => {
   try {
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_TMDB_BASE_URL}/movie/${id}/credits?language=en-US`,
@@ -11,10 +10,11 @@ export const StaffImpormation = async (id) => {
         },
       }
     );
-    const movies = await response.json();
 
-    return movies;
-  } catch {
+    const data = await response.json();
+
+    return data;
+  } catch (error) {
     console.log(error);
   }
 };

@@ -2,7 +2,7 @@ import { Star, Play } from "lucide-react";
 import { Button } from "../ui/button";
 import { MovieTrailer } from "../MovieTrailer";
 export const Cover = ({ movie }) => {
-  console.log(movie);
+  // console.log(movie);
   const imgUrl = `${process.env.NEXT_PUBLIC_TMDB_IMAGE_SERVICE_URL}${movie?.backdrop_path}`;
   const poster = `${process.env.NEXT_PUBLIC_TMDB_IMAGE_SERVICE_URL}${movie?.poster_path}`;
   return (

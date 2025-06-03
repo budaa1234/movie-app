@@ -1,11 +1,18 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
+import { parseAsArrayOf, parseAsInteger, useQueryState } from "nuqs";
+import { ChevronRight } from "lucide-react";
 
 export const AllGenres = () => {
   const router = useRouter();
   const [genres, setGenres] = useState([]);
-  const [genreIds, setGenreIds] = useState([]);
+
+  const [genreIds, setGenreIds] = useQueryState(
+    "genreIds",
+    parseAsArrayOf(parseAsInteger).withDefault([])
+  );
+
   const getMovieGenres = async () => {
     try {
       const response = await fetch(
@@ -30,12 +37,13 @@ export const AllGenres = () => {
     getMovieGenres();
   }, []);
 
-  const handleSelectGenre = (id, name) => {
-    setGenreIds([...genreIds, id]);
-
-    router.push(`/genres?genreIds=${genreIds}&name=${name}`);
+  const handleSelectGenre = (id) => {
+    const newGenreIds = genreIds.includes(id)
+      ? genreIds.filter((t) => t !== id)
+      : [...genreIds, id];
+    setGenreIds(newGenreIds);
+    router.push(`/genres?genreIds=${newGenreIds}`);
   };
-
   return (
     <div className="flex flex-wrap gap-4 w-[387px]">
       {genres?.genres?.map((genre) => (
@@ -45,6 +53,7 @@ export const AllGenres = () => {
           onClick={() => handleSelectGenre(genre.id, genre.name)}
         >
           {genre.name}
+          <ChevronRight/>
         </Button>
       ))}
     </div>

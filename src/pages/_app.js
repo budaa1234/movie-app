@@ -7,7 +7,7 @@ import { NuqsAdapter } from "nuqs/adapters/next/app";
 
 export default function App({ Component, pageProps }) {
   return (
-    <div className="container mx-auto">
+    <div>
       <NuqsAdapter>
         <ThemeProvider
           attribute="class"
@@ -16,7 +16,9 @@ export default function App({ Component, pageProps }) {
           disableTransitionOnChange
         >
           <Header />
-          <Component {...pageProps} />
+          <div className="container mx-auto">
+            <Component {...pageProps} />
+          </div>
           <Footer />
         </ThemeProvider>
       </NuqsAdapter>

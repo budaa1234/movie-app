@@ -29,8 +29,8 @@ const Upcoming = () => {
           <h1 className="text-[24px] font-black">Upcoming</h1>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
-          {upcomingMovies.map((movie) => (
-            <MovieCard key={movie.id} movie={movie} />
+          {upcomingMovies?.map((movie) => (
+            <MovieCard key={movie.id} movie={movie} movieId={id}/>
           ))}
         </div>
         <Pagination>

@@ -46,16 +46,20 @@ export const AllGenres = () => {
   };
   return (
     <div className="flex flex-wrap gap-4 w-[387px]">
-      {genres?.genres?.map((genre) => (
-        <Button
-          variant="outline"
-          className="w-fit bg-white text-foreground hover:bg-none text-[12px] font-bold h-[20px]"
-          onClick={() => handleSelectGenre(genre.id, genre.name)}
-        >
-          {genre.name}
-          <ChevronRight/>
-        </Button>
-      ))}
+      {genres?.genres?.map((genre) => {
+        const isSelected = genreIds?.includes(genre.id)
+        return (
+          <Button
+            variant="outline"
+            className={`w-fit bg-white text-foreground hover:bg-none text-[12px] font-bold h-[20px] ${isSelected ? "bg-blue-600" : "bg-white"}`}
+            onClick={() => handleSelectGenre(genre.id, genre.name)}
+          >
+            {genre.name}
+            <ChevronRight />
+          </Button>
+        );
+      })}
     </div>
   );
 };
+

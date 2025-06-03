@@ -38,12 +38,12 @@ const Page = () => {
   return (
     <div className="mx-auto max-w-[1280px]">
       <h1 className="text-[30px]">Search filter</h1>
-      <div className="flex mt-8">
+      <div className="md:flex md:gap-y-6 md:mt-8">
         <div className="w-[387px]">
           <AllGenres />
         </div>
         <Separator orientation="vertical" className="mx-4" />
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center">
           {genreMovies?.results?.map((movie) => (
             <MovieCard movie={movie} />
           ))}

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { MovieCard } from "@/components/MovieCard";
-import { getUpcomingMovies } from "@/lib/api/get-upcoming-movie";
+import { getTopRatedMovies } from "@/lib/api/get-topRated-movie";
 import {
   Pagination,
   PaginationContent,
@@ -11,15 +11,15 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination";
 
-const Upcoming = () => {
-  const [upcomingMovies, setUpcomingMovies] = useState([]);
+const TopRated = () => {
+  const [topRatedMovies, setTopRatedMovies] = useState([]);
   useEffect(() => {
     const fetchMovies = async () => {
-      const upcomingMovies = await getUpcomingMovies();
-      
-      setUpcomingMovies(upcomingMovies);
+      const topRatedMovies = await getTopRatedMovies();
 
-      // console.log(upcomingMovies);
+      setTopRatedMovies(topRatedMovies);
+
+      console.log(topRatedMovies);
     };
     fetchMovies();
   }, []);
@@ -27,10 +27,10 @@ const Upcoming = () => {
     <div className="flex flex-col gap-13 mx-auto max-w-[1280px]">
       <div className="flex flex-col gap-8">
         <div className="flex justify-between">
-          <h1 className="text-[24px] font-black">Upcoming</h1>
+          <h1 className="text-[24px] font-black">Top Rated</h1>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
-          {upcomingMovies?.results?.map((movie) => (
+          {topRatedMovies?.results?.map((movie) => (
             <MovieCard key={movie.id} movie={movie} />
           ))}
         </div>
@@ -54,4 +54,4 @@ const Upcoming = () => {
     </div>
   );
 };
-export default Upcoming;
+export default TopRated;

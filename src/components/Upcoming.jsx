@@ -11,11 +11,11 @@ export const Upcoming = () => {
     const fetchMovies = async () => {
       const upcomingMovies = await getUpcomingMovies();
 
-      const firstTenMovies = upcomingMovies?.results?.slice(0, 10)
+      const firstTenMovies = upcomingMovies?.results?.slice(0, 10);
 
       setUpcomingMovies(firstTenMovies);
 
-      console.log(upcomingMovies);
+      // console.log(upcomingMovies);
     };
     fetchMovies();
   }, []);

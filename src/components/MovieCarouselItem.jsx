@@ -3,7 +3,7 @@ import Link from "next/link";
 import { MovieTrailer } from "@/components/MovieTrailer";
 export const MovieCarouselItem = ({ movie }) => {
   const imgUrl = `${process.env.NEXT_PUBLIC_TMDB_IMAGE_SERVICE_URL}${movie.backdrop_path}`;
-  console.log(imgUrl);
+  // console.log(imgUrl);
   return (
     <div className="relative">
       <Link href={`/details/${movie.id}`}>

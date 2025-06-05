@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { MovieCard } from "./MovieCard";
 import { PopularLouding } from "./PopularLouding";
-import { Skeleton } from "./ui/skeleton";
 export const Popular = () => {
   const [popularMovies, setPopularMovies] = useState([]);
   const [louding, setLouding] = useState(false);
@@ -14,8 +13,10 @@ export const Popular = () => {
     const fetchMovies = async () => {
       const popularMovies = await getPopularMovies();
 
-      setPopularMovies(popularMovies);
-      console.log(popularMovies);
+      const firstTenMovies = popularMovies?.results?.slice(0, 10)
+
+      setPopularMovies(firstTenMovies );
+    
     };
     fetchMovies();
     setLouding(false);
@@ -35,7 +36,7 @@ export const Popular = () => {
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
-          {popularMovies?.slice(0, 10).map((movie) => (
+          {popularMovies?.map((movie) => (
             <MovieCard key={movie.id} movie={movie} />
           ))}
         </div>

@@ -13,8 +13,9 @@ export const TopRated = () => {
     const fetchMovies = async () => {
       const topRatedMovies = await getTopRatedMovies();
 
-      setTopRatedMovies(topRatedMovies);
-      
+      const firstTenMovies = topRatedMovies?.results?.slice(0, 10)
+
+      setTopRatedMovies(firstTenMovies);
 
       // console.log(topRatedMovies);
     };
@@ -34,8 +35,8 @@ export const TopRated = () => {
         </Link>
       </div>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
-        {topRatedMovies?.slice(0, 10).map((movie) => (
-          <MovieCard key={movie.id} movie={movie} movieId={movie.id} />
+        {topRatedMovies?.map((movie) => (
+          <MovieCard key={movie.id} movie={movie} />
         ))}
       </div>
     </div>

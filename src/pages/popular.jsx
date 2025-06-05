@@ -1,18 +1,44 @@
 import { MovieCard } from "@/components/MovieCard";
 import { getPopularMovies } from "@/lib/api/get-popular-movie";
+import { parseAsInteger, useQueryState } from "nuqs";
 import { useEffect, useState } from "react";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination"
 
 const Popular = () => {
   const [popularMovies, setPopularMovies] = useState([]);
+  const [totalPage, setTotalPage] = useState(0)
+  const [page, setPage] = useQueryState("page", parseAsInteger.withDefault(1))
   useEffect(() => {
     const fetchMovies = async () => {
-      const popularMovies = await getPopularMovies();
+      const data= await getPopularMovies(page);
 
-      setPopularMovies(popularMovies);
-      console.log(popularMovies);
+      setPopularMovies(data?.results)
+      setTotalPage(data?.total_pages)
     };
     fetchMovies();
-  }, []);
+  }, [page]);
+
+  const nextPage = () => {
+    setPage(page + 1)
+  }
+
+  const selectPage = (pageNumber) => {
+    setPage(pageNumber)
+  }
+
+  const previous = () => {
+    setPage(page - 1)
+  }
+   
+  const pagination = new Array(totalPage).fill(null).map((_, index) => index + 1).slice(0, 3)
   return (
     <div>
       <div className="flex flex-col gap-8">
@@ -20,10 +46,27 @@ const Popular = () => {
           <h1 className="text-[24px] font-black">Popular</h1>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
-          {popularMovies?.results?.map((movie) => (
+          {popularMovies?.map((movie) => (
             <MovieCard key={movie.id} movie={movie} />
           ))}
         </div>
+        <Pagination>
+  <PaginationContent>
+    <PaginationItem>
+      <PaginationPrevious onClick={previous}/>
+    </PaginationItem>
+    {pagination?.map((pageNumber)=>{return( <PaginationItem>
+      <PaginationLink onClick={()=>selectPage(pageNumber)}>{pageNumber}</PaginationLink>
+    </PaginationItem>)})}
+   
+    <PaginationItem>
+      <PaginationEllipsis />
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationNext onClick={nextPage}/>
+    </PaginationItem>
+  </PaginationContent>
+</Pagination>
       </div>
     </div>
   );

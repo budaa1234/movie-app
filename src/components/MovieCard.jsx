@@ -13,7 +13,7 @@ export const MovieCard = ({ movie }) => {
       <div className=" h-auto md:h-auto bg-[#F4F4F5] rounded-b-lg">
         <div className="flex gap-[4px] p-[8px]">
           <Star className="text-yellow-300 fill-amber-300 w-4 h-4" />
-          <p className="text-[12px] md:text-[14px] ">
+          <p className="text-[12px] md:text-[14px] dark:text-black">
             {movie?.vote_average.toFixed(1)}
           </p>
         </div>

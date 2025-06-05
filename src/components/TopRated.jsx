@@ -4,18 +4,24 @@ import { Button } from "./ui/button";
 import { getTopRatedMovies } from "@/lib/api/get-topRated-movie";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { PopularLouding } from "./PopularLouding";
 export const TopRated = () => {
   const [topRatedMovies, setTopRatedMovies] = useState([]);
+  const [louding, setLoudig]= useState(false)
   useEffect(() => {
+    setLoudig(true)
     const fetchMovies = async () => {
       const topRatedMovies = await getTopRatedMovies();
 
       setTopRatedMovies(topRatedMovies);
+      
 
       // console.log(topRatedMovies);
     };
+    setLoudig(false)
     fetchMovies();
   }, []);
+  if(louding)return <PopularLouding/>
   return (
     <div className="flex flex-col gap-8">
       <div className="flex justify-between">

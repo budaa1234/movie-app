@@ -12,8 +12,8 @@ import {
 export const HeaderGenre = () => {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="flex items-center rounded-lg p-2 h-[36px] shadow-sm border">
-        <ChevronDown />
+      <DropdownMenuTrigger className="flex items-center h-[36px] rounded-lg shadow-sm border-none p-4 text-[14px] gap-2">
+        <ChevronDown className="w-[16px]"/>
         Genres
       </DropdownMenuTrigger>
       <DropdownMenuContent className="p-5 w-[577px]">

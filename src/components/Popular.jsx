@@ -18,9 +18,9 @@ export const Popular = () => {
       console.log(popularMovies);
     };
     fetchMovies();
-    setLouding(true);
+    setLouding(false);
   }, []);
-  
+  if (louding) return <PopularLouding />;
   return (
     <div>
       <div className="flex flex-col gap-8">
@@ -35,11 +35,9 @@ export const Popular = () => {
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
-          {louding && <PopularLouding />}
-          {!louding &&
-            popularMovies
-              ?.slice(0, 10)
-              .map((movie) => <MovieCard key={movie.id} movie={movie} />)}
+          {popularMovies?.slice(0, 10).map((movie) => (
+            <MovieCard key={movie.id} movie={movie} />
+          ))}
         </div>
       </div>
     </div>

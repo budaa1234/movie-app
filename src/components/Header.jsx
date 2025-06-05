@@ -3,6 +3,8 @@ import { Search, Film } from "lucide-react";
 import Link from "next/link";
 import { HeaderGenre } from "./HeaderGenre";
 import { ModeToggle } from "./ModeToggle";
+import { HomeSearch } from "./Search";
+import { cn } from "@/lib/utils";
 
 export const Header = () => {
   return (
@@ -21,15 +23,19 @@ export const Header = () => {
 
         <div className="hidden md:flex md:gap-[70px]">
           {/* genre button */}
-          <HeaderGenre/>
+          <HeaderGenre />
           {/* search */}
           <div className="flex items-center gap-[12px]">
-            <div className="flex items-center relative">
-              <Search color="#71717A" className="w-[16px] h-[16px] m-[12px]" />
-              <input
+            <div className={cn("relative text-muted-foreground", "w-[379px]")}>
+              <Search
+                size={16}
+                className="absolute -translate-y-1/2 left-3 top-1/2"
+              />
+              <HomeSearch />
+              {/* <input
                 placeholder="Search..."
                 className="absolute w-[379px] h-[36px] rounded-lg shadow-sm border-none  outline-none pl-[38px]"
-              />
+              /> */}
             </div>
           </div>
         </div>
@@ -40,7 +46,7 @@ export const Header = () => {
             {" "}
             <Search className="w-[12px] h-[12px]" />
           </button>
-          <ModeToggle/>
+          <ModeToggle />
         </div>
       </div>
     </div>

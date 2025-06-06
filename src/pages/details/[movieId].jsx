@@ -9,28 +9,26 @@ export default function Page() {
   const router = useRouter();
   const movieId = router.query.movieId;
   const [movie, setMovie] = useState({});
-  const [louding, setLouding]=useState(false)
+  const [louding, setLouding] = useState(false);
 
   useEffect(() => {
-    setLouding(true)
+    setLouding(true);
     if (!movieId) return;
     const getMovie = async () => {
       const data = await getMovieById(movieId);
       setMovie(data);
     };
     getMovie();
-    setLouding(false)
+    setLouding(false);
   }, [movieId]);
-  if(louding) return <DetailsLouding/>
+  if (louding) return <DetailsLouding />;
   return (
-    <div className="mx-auto flex flex-col gap-y-[20px]">
-    
+    <div>
       <div className="mx-auto max-w-[1280px] flex flex-col gap-y-5">
         <Cover movie={movie} />
         <StaffImformation id={movie.id} />
-        <Similar  movie={movie} />
+        <Similar movie={movie} />
       </div>
-    
     </div>
   );
 }

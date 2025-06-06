@@ -28,7 +28,6 @@ export const Footer = () => {
             </div>
 
             <div className="flex-col">
-              
               <div className="flex items-center gap-3">
                 <Phone color="white" />
                 <div className="flex-col">

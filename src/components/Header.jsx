@@ -6,12 +6,11 @@ import { HomeSearch } from "./Search";
 import { cn } from "@/lib/utils";
 
 export const Header = () => {
-
   return (
     <div>
       {/* logo */}
 
-      <div className="h-[59px] md:w-full flex p-[20px] items-center md:justify-between justify-between ">
+      <div className="h-[59px] w-full flex p-[20px] items-center justify-between ">
         <Link href={`/`}>
           <div className="flex ">
             <Film color="#4338CA" />

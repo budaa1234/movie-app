@@ -1,7 +1,6 @@
 import { MovieCard } from "@/components/MovieCard";
 import { useEffect, useState } from "react";
 import { getSimilarMovies } from "@/lib/api/get-similar-movie";
-import { useRouter } from "next/router";
 import { parseAsInteger, useQueryState } from "nuqs";
 import {
   Pagination,

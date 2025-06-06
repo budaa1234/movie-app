@@ -1,5 +1,4 @@
 import { Search, Film } from "lucide-react";
-
 import Link from "next/link";
 import { HeaderGenre } from "./HeaderGenre";
 import { ModeToggle } from "./ModeToggle";
@@ -7,6 +6,7 @@ import { HomeSearch } from "./Search";
 import { cn } from "@/lib/utils";
 
 export const Header = () => {
+
   return (
     <div>
       {/* logo */}
@@ -32,17 +32,13 @@ export const Header = () => {
                 className="absolute -translate-y-1/2 left-3 top-1/2"
               />
               <HomeSearch />
-              {/* <input
-                placeholder="Search..."
-                className="absolute w-[379px] h-[36px] rounded-lg shadow-sm border-none  outline-none pl-[38px]"
-              /> */}
             </div>
           </div>
         </div>
 
         {/* dark mode button */}
         <div className="flex gap-[12px]">
-          <button className="w-[36px] h-[36px] border-[#F4F4F5] shadow-sm flex items-center justify-center rounded-md">
+          <button className="w-[36px] h-[36px] border-[#F4F4F5] shadow-sm flex items-center justify-center rounded-md md:hidden">
             {" "}
             <Search className="w-[12px] h-[12px]" />
           </button>

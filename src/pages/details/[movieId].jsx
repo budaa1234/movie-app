@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Cover } from "@/components/details/Cover";
 import { StaffImformation } from "@/components/details/StaffImformation";
 import { Similar } from "@/components/details/Similar";
-import { DetielsLouding } from "@/components/DetielsLouding";
+import { DetailsLouding } from "@/components/DetailsLouding";
 export default function Page() {
   const router = useRouter();
   const movieId = router.query.movieId;
@@ -21,9 +21,9 @@ export default function Page() {
     getMovie();
     setLouding(false)
   }, [movieId]);
-  if(louding) return <DetielsLouding/>
+  if(louding) return <DetailsLouding/>
   return (
-    <div className="container mx-auto flex flex-col gap-y-[20px]">
+    <div className="mx-auto flex flex-col gap-y-[20px]">
     
       <div className="mx-auto max-w-[1280px] flex flex-col gap-y-5">
         <Cover movie={movie} />

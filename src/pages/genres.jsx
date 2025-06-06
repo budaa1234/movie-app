@@ -42,8 +42,8 @@ const Page = () => {
         <div className="w-[387px]">
           <AllGenres />
         </div>
-        <Separator orientation="vertical" className="mx-4" />
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center">
+        <Separator orientation="vertical" className="h-full mx-4"/>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center ">
           {genreMovies?.results?.map((movie) => (
             <MovieCard movie={movie} />
           ))}

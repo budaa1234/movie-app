@@ -21,7 +21,7 @@ export const HomeSearch = () => {
       );
 
       const movies = await response.json();
-      console.log(movies);
+      
       
 
       setMovies(movies)

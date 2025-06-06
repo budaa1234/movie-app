@@ -1,29 +1,59 @@
 import { getDirector } from "@/lib/api/get-director";
-import { useEffect } from "react";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
-export const StaffImformation = ({ id }) => {
-   console.log(id)
-   useEffect(() => {
-    getDirector()
-   }, [])
-   
+export const StaffImformation = () => {
+  const [direct, setDirect] = useState({});
+  const router = useRouter();
+  const id = router.query.movieId;
+  console.log(id);
+
+  useEffect(() => {
+    if (!id) return;
+    const getMovie = async () => {
+      try {
+        const data = await getDirector(id);
+        setDirect(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getMovie();
+  }, [id]);
+  console.log(direct);
+
+  const directors = direct.crew?.filter(
+    (director) => director.known_for_department === "Directing"
+  );
+
+  const writers = direct.crew?.filter(
+    (writer) => writer.known_for_department === "Writing"
+  );
+
+  const stars = direct.cast?.filter(
+    (star) => star.known_for_department === "Acting"
+  );
+
   return (
-    <div className="flex-col  flex gap-y-[33px]">
-      <div className="flex px-[20px] gap-13">
+    <div className="flex-col  flex gap-y-[33px] max-w-[1280px] mx-auto">
+      <div className="flex px-[20px] gap-13  border-b">
         <p className="text-[16px] font-bold w-[64px]">Director</p>
-        <p className="text-[16px]">Jon M. Chu</p>
+        {directors?.slice(0, 1).map((director) => (
+          <p className="text-[16px]">{director?.name}</p>
+        ))}
       </div>
-      <div className="flex px-[20px] gap-13">
+     
+      <div className="flex px-[20px] gap-13 border-b">
         <p className="text-[16px] font-bold w-[64px]">Writers</p>
-        <p className="text-[16px]">
-          Winnie Holzman · Dana Fox · Gregory Maguire
-        </p>
+        {writers?.slice(0, 3).map((writer) => (
+          <p className="text-[16px]">{writer?.name}</p>
+        ))}
       </div>
-      <div className="flex px-[20px] gap-13">
+      <div className="flex px-[20px] gap-13  border-b">
         <p className="text-[16px] font-bold w-[64px]">Stars</p>
-        <p className="text-[16px]">
-          Cynthia Erivo · Ariana Grande · Jeff Goldblum
-        </p>
+        {stars?.slice(0, 3).map((star) => (
+          <p className="text-[16px]">{star?.name}</p>
+        ))}
       </div>
     </div>
   );

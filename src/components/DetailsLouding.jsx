@@ -1,6 +1,6 @@
 import { Skeleton } from "./ui/skeleton"
 
-export const DetielsLouding = () => {
+export const DetailsLouding = () => {
     return(
         <div className="max-w-[1280px]">
       <div className="flex justify-between p-5 mx-auto max-w-[1280px]">

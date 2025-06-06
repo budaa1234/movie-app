@@ -11,7 +11,6 @@ export const getSimilarMovies = async (movieId, page=1) => {
     }
   );
   const data = await response.json();  
-  console.log(data);
   
   return data
 

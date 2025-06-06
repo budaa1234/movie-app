@@ -16,7 +16,7 @@ export default function App({ Component, pageProps }) {
           disableTransitionOnChange
         >
           <Header />
-          <div className="container mx-auto">
+          <div className="container mx-auto max-w-[1280px]">
             <Component {...pageProps} />
           </div>
           <Footer />

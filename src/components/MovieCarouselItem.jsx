@@ -1,4 +1,4 @@
-import { Star, Play } from "lucide-react";
+import { Star } from "lucide-react";
 import Link from "next/link";
 import { MovieTrailer } from "@/components/MovieTrailer";
 export const MovieCarouselItem = ({ movie }) => {
@@ -31,10 +31,7 @@ export const MovieCarouselItem = ({ movie }) => {
         </div>
         <MovieTrailer movieId={movie.id} />
 
-        {/* <button className="w-[145px] h-[40px] px-[8px] text-[#fff] bg-[#18181B] flex items-center gap-[8px] rounded-md">
-          <Play className="w-[16px] h-[16px] " />
-          Watch Trailer
-        </button> */}
+       
       </div>
     </div>
   );

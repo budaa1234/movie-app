@@ -1,3 +1,4 @@
+"user client";
 import { useEffect, useState } from "react";
 import { MovieCard } from "./MovieCard";
 import { Button } from "./ui/button";

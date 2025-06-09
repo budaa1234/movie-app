@@ -2,9 +2,12 @@ import { useEffect, useState } from "react";
 import { SearchResult } from "./SearchResult";
 import { cn } from "@/lib/utils";
 import { Input } from "./ui/input";
+import { MovieCard } from "./MovieCard";
 
 export const HomeSearch = () => {
   const [searchValue, setSearchValue] = useState("");
+ 
+  
   const [movies, setMovies] = useState([]);
   
   const searchMovie = async () => {
@@ -25,11 +28,13 @@ export const HomeSearch = () => {
       
 
       setMovies(movies)
+      console.log(movies);
+      
     } catch (error) {
       console.log(error);
     }
   };
-  console.log(searchValue);
+ 
   useEffect(() => {
     searchMovie();
   }, [searchValue]);
@@ -42,6 +47,7 @@ export const HomeSearch = () => {
         placeholder="Search..."
         className={cn("pl-[38px]", "rounded-lg shadow-sm border-none", "h-[36px]")}
       />
+     
       {movies?.results?.length > 0 && (
         <SearchResult movies={movies} setSearchValue={setSearchValue} />
       )}

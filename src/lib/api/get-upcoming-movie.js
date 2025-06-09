@@ -10,6 +10,6 @@ export const getUpcomingMovies = async (page = 1) => {
     }
   );
   const data = await response.json();
-  console.log(data);
+  
   return data;
 };
